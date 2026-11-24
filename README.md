@@ -46,6 +46,8 @@ Decision: simulate LLM responses.
 
 - I chose scripted responses to avoid LLM API costs and keep the prototype on presenting a simulated context-selection interaction. This allows me to demonstrate the user controlled process and resolving budget conflicts. This simulation will show the interface behaviour, but will not provide evidence of how a real LLM would use the selected context.
 
+1
+
 ## AI assistance
 
 Model used: ChatGPT Astra
