@@ -19,13 +19,13 @@ Initial planned behaviour:
 
 ## Tech stack
 
-TBD
+The prototype will use HTML, CSS and vanilla JavaScript to create an interactive interface where the proposed interactions locally in a browser. Context selection will use a simulated word budget, and all responses will be scripted with no backend, database or LLM API. This is because the first prototype is intended to be just an interactive interface, and LLM APIs are over my budget. Node.js’s built-in test runner will check the context-selection logic. No technology choices remain undecided for this simulation apart from the model or API for a future live version, which I have not selected.
 
 ## Run/Inspection
 
-TBD
+Started with ChatGPT Astra.
 
-## Development record
+## Development record of changes
 
 V1 sketch design: contained two screens.
 
@@ -40,9 +40,15 @@ V2 sketch design: combining the two screens.
 - kept the definition of important, included and excluded.
 - kept the overall functionality of the prototype.
 
+Prototype idea c1 (change 1)
+
+Decision: simulate LLM responses.
+
+- I chose scripted responses to avoid LLM API costs and keep the prototype on presenting a simulated context-selection interaction. This allows me to demonstrate the user controlled process and resolving budget conflicts. This simulation will show the interface behaviour, but will not provide evidence of how a real LLM would use the selected context.
+
 ## AI assistance
 
-model used: ChatGPT Plus Astra
+Model used: ChatGPT Astra
 
 - ChatGPT suggested the repository structure, I took the gitignore base template given and changed the wording of the readme template.
 - After drawing my initial sketch of what the prototype should look like, I sent it to ChatGPT for suggestions: it suggested that it currently has too much redundant information and was too much effort to navigate, and suggested that I should combine the two screens into one to make it easier to use.
