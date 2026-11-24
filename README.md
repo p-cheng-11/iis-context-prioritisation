@@ -27,16 +27,30 @@ TBD
 
 ## Development record
 
-- record significant changes, reasons, and checks.
-- link relevant commits where useful.
+V1 sketch design: contained two screens.
+
+- The first screen contained the chatbot interface, where the user can exchange messages with the chatbot, mark messages as important, and see which messages were included in the context for the next response. Flags indicates being marked as important, while ticks indicates that the message is currently being used in generating the next response.
+- In this prototype, marking a message as important tells the system to prioritise it when selecting what to include in context for the next simulated response. “Included” means the message is currently selected within the available context budget. The system first includes messages marked as important, then fills the remaining space with unmarked messages, starting with the most recent ones. Older messages may be excluded when the context budget is low, but the user can mark them as important to prioritise them when needed. If the important messages exceed the budget, the prototype displays a warning and pauses the response generation until the user adjusts which messages are selected as important or increases the budget.
+- The second screen provided a detailed view of context selection. It shows the current context budget, a slider for adjusting it, and a list of currently included messages. It also showed counts of each type of messages, separated into assistant and user messages. My intention was to separate the conversation interface from the context information and statistics, giving each function its own screen.
+
+V2 sketch design: combining the two screens.
+
+- I had a discussion about v1 with ChatGPT, it pointed out the unused space and whether users actually needs these separate counts for assistant and user messages. I considered this a useful observation because the main purpose of the interface was to help users understand and control which messages would inform the next response.
+- Therefore in V2, I combined the two screens into one. The conversation on the left, a sidebar on the right displays the context budget, summary counts, and the currently included messages. This allows the user to view the conversation and its selected context together without having to switch screens. The intension is to make the overall functionality flow easier to follow.
+- kept the definition of important, included and excluded.
+- kept the overall functionality of the prototype.
 
 ## AI assistance
 
+model used: ChatGPT Plus Astra
+
 - ChatGPT suggested the repository structure, I took the gitignore base template given and changed the wording of the readme template.
+- After drawing my initial sketch of what the prototype should look like, I sent it to ChatGPT for suggestions: it suggested that it currently has too much redundant information and was too much effort to navigate, and suggested that I should combine the two screens into one to make it easier to use.
 
 ## Other materials
 
 - docs/scenarios.md: planned interaction examples.
+- docs/sketch-designs: the versions of the prototype interface sketches.
 
 ## Initial Design
 
