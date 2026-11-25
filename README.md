@@ -4,7 +4,7 @@ IIS A2 prototype: exploring user-controlled context prioritisation in LLM conver
 
 # User-Controlled Context Prioritisation
 
-README prose word count: [TBD]
+README prose word count: 1686
 
 ## Overview
 
