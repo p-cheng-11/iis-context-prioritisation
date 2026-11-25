@@ -107,6 +107,7 @@ Model used: ChatGPT Astra
 - ChatGPT Astra generated the new css code added in styles.css after I described what issue I'm seeing with the page and told it what I want it to fix.
 - ChatGPT Astra generated selection.test.cjs, which contained the automated checks for the context-selection logic.
 - ChatGPT Astra explained how the test for selection (selection.test.cjs) works and runs, I took the explanation and wrote the section for automated tests.
+- ChatGPT Astra helped structure the report refined wording. I adapted the suggestions and checked the descriptions against the prototype and assignment requirements.
 
 ## Other materials
 
