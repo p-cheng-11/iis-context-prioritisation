@@ -23,7 +23,7 @@ The prototype will use HTML, CSS and vanilla JavaScript to create an interactive
 
 ## Run/Inspection
 
-Started with ChatGPT Astra.
+- open the index.html file
 
 ## Development record of changes
 
@@ -50,6 +50,8 @@ V3 sketch design: combining the two screens.
 
 This time, a left side bar is added specifically to act as a guide for showing three different scenarios in using this application prototype. This is not a part of the product, and will only be added to this interface as a guide on using it.
 
+Prototype v1: initial screen created.
+
 ## AI assistance
 
 Model used: ChatGPT Astra
@@ -59,6 +61,7 @@ Model used: ChatGPT Astra
 - ChatGPT Astra generated storyboard 1's image representation after I sent the flow of the panels as prompt.
 - ChatGPT Astra generated storyboard 2's image representation after I sent the flow of the panels as prompt.
 - ChatGPT Astra generated storyboard 3's image representation after I sent the flow of the panels as prompt.
+- CHatGPT Astra generated the initial prototype (code in the prototype folder) after I sent it my sketch v3, I did not write this code.
 
 ## Other materials
 
