@@ -25,7 +25,7 @@ The features: free-text conversation, long-term storage and passage-level highli
 
 ## Tech stack
 
-The prototype will use HTML, CSS and vanilla JavaScript to create an interactive interface where the proposed interactions locally in a browser. Context selection will use a simulated word budget, and all responses will be scripted with no backend, database or LLM API. This is because the first prototype is intended to be just an interactive interface, and LLM APIs are over my budget. Node.js’s built-in test runner will check the context-selection logic. No technology choices remain undecided for this simulation apart from the model or API for a future live version, which I have not selected. ChatGPT was used as a development tool. It generated the prototype code as well as the code for design refinement, and provided advice on documentation and testing guidance.
+The prototype uses HTML for structure, CSS for styling and vanilla JS for interface interactions and user-controlled context selection. It runs locally in a browser with no backend, database or LLM API. Node.js's built-in test runner checks the selection logic. ChatGPT generated the prototype and test code, and helped refine the design and documentation wording. No technology choices remain undecided for this simulation apart from the model or API for a future live version, which I have not selected.
 
 ## Run and inspect
 
@@ -73,7 +73,7 @@ This has been checked and ran locally, a working screenshot of the test results 
 - kept the definition of important, included and excluded.
 - kept the overall functionality of the prototype.
 
-**Prototype idea c1 (change 1)**
+**Prototype idea**
 
 Decision: simulate LLM responses.
 
@@ -87,8 +87,8 @@ This time, a left side bar is added specifically to act as a guide for showing t
 
 This prototype followed the rough layout of sketch-v3, and implements whole-message importance marking, context selection, inclusion indicators (flags and ticks), a context preview, undo button, and budget-overflow warnings. It uses a scripted conversation and three demonstration scenarios as descripted in scenarios.md.
 Marking or unmarking a message recalculates the selected context and updates the UI. Once the flag icon is clicked, the message became flagged as important and is included, and appeared in the selected-message list on the right hand side.
-Also on the right hand side, the undo button was also checked, clicking this button results in unmarking most recently changed the selection, restoring the previous flags and selected messages. A warning appears and the reply button became disabled upon checking this feeature. After unmarking a message so the context space is freed and the priorities fitted, the warning cleared and the button became available again.
-If important messages exceed the budget, the interface shows a warning and disables the response generation until the conflict is resolved.
+Also on the right hand side, the undo button was also checked. Clicking Undo restored the previous user action in adjusting the flagged messages and selected context.
+Separately, when important messages exceeded the budget, a warning appeared and the reply button became disabled. Unmarking a message so the priorities fitted can help clearing the warning and re-enable the reply button.
 Context selection and interface controls are implemented in vanilla JS. The word budget and scripted replies simulate LLM interaction, but no real model is connected.
 
 **Prototype v1.2: adjusted visual styling.**
@@ -112,13 +112,13 @@ Model used: ChatGPT Astra
 
 - docs/scenarios.md: planned interaction examples.
 - docs/sketch-designs: the versions of the prototype interface sketches.
-- docs/storyboards/storyboard1.png, docs/storyboards/storyboard2.png, docs/storyboards/storyboard3.png: the three 6-panelled storyboards showing a fictional persona Sam interacting with the system.
+- docs/storyboards/storyboard1.png, docs/storyboards/storyboard2.png, docs/storyboards/storyboard3.png: the three 6-panelled storyboards showing a fictional persona Bob interacting with the system.
 - docs/storyboards/storyboards.md: markdown file explaining what each storyboard depicted.
 - prototype/tests: the test code and screenshot evidence.
 - prototype/prototype-architecture.pdf: design architecture diagram for the prototype.
 - prototype/Prototype-v1.2-explaining-ui.pdf: labelled UI to explain the components on the screen in the final prototype.
 
-## Initial Design
+## Initial Design Proposal
 
 User problem - important earlier messages containing key information can be excluded due to truncation as the conversation length increase and the conversation must fit into a limited context budget.
 
@@ -126,7 +126,7 @@ User goal - influence which information remains available to the AI for future r
 
 User action - mark and unmark a message as important.
 
-System response - recalculate which messages should be incluedd and excluded in the context for the upcoming generated response after assigning higher priority to the marked messages.
+System response - recalculate which messages should be included and excluded in the context for the upcoming generated response after assigning higher priority to the marked messages.
 
 Visible feedback - show which messages are included and which are marked as important, e.g. marked as important can be with a small flag icon whilst marked as included could be with a ticked star icon, both in the actual conversation history; include a pop-up window the user should be able to open to see the included messages from the conversation history.
 
