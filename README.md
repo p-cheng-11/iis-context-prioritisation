@@ -17,9 +17,15 @@ Initial planned behaviour:
 - Preview included and excluded messages.
 - Warn when marked messages exceed the available budget.
 
+## Current Status
+
+The current version is an interactive browser-based prototype. The features: whole-message importance marking, context selection, inclusion indicators, context preview, undo changes and overflow warnings are implemented. This prototype uses a prepared, scripted conversation and a word-count instead of token-count budget, and it does not connect to a real LLM. The left-hand scenario panel provides demonstration guidance and is not part of the proposed product.
+
+The features: free-text conversation, long-term storage and passage-level highlighting for important marking are not implemented. Passage-level highlighting and live LLM integration are possible future development directions outside of this current prototype scope.
+
 ## Tech stack
 
-The prototype will use HTML, CSS and vanilla JavaScript to create an interactive interface where the proposed interactions locally in a browser. Context selection will use a simulated word budget, and all responses will be scripted with no backend, database or LLM API. This is because the first prototype is intended to be just an interactive interface, and LLM APIs are over my budget. Node.js’s built-in test runner will check the context-selection logic. No technology choices remain undecided for this simulation apart from the model or API for a future live version, which I have not selected.
+The prototype will use HTML, CSS and vanilla JavaScript to create an interactive interface where the proposed interactions locally in a browser. Context selection will use a simulated word budget, and all responses will be scripted with no backend, database or LLM API. This is because the first prototype is intended to be just an interactive interface, and LLM APIs are over my budget. Node.js’s built-in test runner will check the context-selection logic. No technology choices remain undecided for this simulation apart from the model or API for a future live version, which I have not selected. ChatGPT was used as a development tool. It generated the prototype code as well as the code for design refinement, and provided advice on documentation and testing guidance.
 
 ## Run and inspect
 
@@ -44,26 +50,30 @@ The tests use Node.js's built-in test runner and requires no additional packages
 
 From the repository root, run:
 
+```
 node --test prototype/tests/selection.test.cjs
+```
 
 The file contains 11 tests of word count and context-selection rules. A successful run should report 11 passed and 0 failed. These tests checks the selection logic, interface interactions must be inspected manually using the scenarios.
 
+This has been checked and ran locally, a working screenshot of the test results on the terminal is provided in prototype/tests/testing-evidence.png
+
 ## Development record of changes
 
-V1 sketch design: contained two screens.
+### V1 sketch design: contained two screens.
 
 - The first screen contained the chatbot interface, where the user can exchange messages with the chatbot, mark messages as important, and see which messages were included in the context for the next response. Flags indicates being marked as important, while ticks indicates that the message is currently being used in generating the next response.
 - In this prototype, marking a message as important tells the system to prioritise it when selecting what to include in context for the next simulated response. “Included” means the message is currently selected within the available context budget. The system first includes messages marked as important, then fills the remaining space with unmarked messages, starting with the most recent ones. Older messages may be excluded when the context budget is low, but the user can mark them as important to prioritise them when needed. If the important messages exceed the budget, the prototype displays a warning and pauses the response generation until the user adjusts which messages are selected as important or increases the budget.
 - The second screen provided a detailed view of context selection. It shows the current context budget, a slider for adjusting it, and a list of currently included messages. It also showed counts of each type of messages, separated into assistant and user messages. My intention was to separate the conversation interface from the context information and statistics, giving each function its own screen.
 
-V2 sketch design: combining the two screens.
+### V2 sketch design: combining the two screens.
 
 - I had a discussion about v1 with ChatGPT, it pointed out the unused space and whether users actually needs these separate counts for assistant and user messages. I considered this a useful observation because the main purpose of the interface was to help users understand and control which messages would inform the next response.
 - Therefore in V2, I combined the two screens into one. The conversation on the left, a sidebar on the right displays the context budget, summary counts, and the currently included messages. This allows the user to view the conversation and its selected context together without having to switch screens. The intension is to make the overall functionality flow easier to follow.
 - kept the definition of important, included and excluded.
 - kept the overall functionality of the prototype.
 
-## Prototype idea c1 (change 1)
+### Prototype idea c1 (change 1)
 
 Decision: simulate LLM responses.
 
@@ -73,11 +83,11 @@ V3 sketch design: combining the two screens.
 
 This time, a left side bar is added specifically to act as a guide for showing three different scenarios in using this application prototype. This is not a part of the product, and will only be added to this interface as a guide on using it.
 
-## Prototype v1.1: initial screen created.
+### Prototype v1.1: initial screen created.
 
 This prototype followed the rough layout of sketch-v3, and implements whole-message importance marking, context selection, inclusion indicators (flags and ticks), a context preview, undo button, and budget-overflow warnings. It uses a scripted conversation and three demonstration scenarios as descripted in scenarios.md. Marking or unmarking a message recalculates the selected context and updates the UI. If important messages exceed the budget, the interface shows a warning and disables the response generation until the conflict is resolved. Context selection and interface controls are implemented in vanilla JS. The word budget and scripted replies simulate LLM interaction, but no real model is connected.
 
-## Prototype v1.2: adjusted visual styling.
+### Prototype v1.2: adjusted visual styling.
 
 Prototype v1.1 had an awkward formatting that made the page unable to mostly fit on the screen. After describing the issue to ChatGPT Astra, it helped me write the code to fix the styling, resizing the page and vertical spacing and applying internal scrolling for conversation history and selected message list, resulting in v1.2 (current version). These changes were intended to make the conversation and context controls easier to inspect and use for the user.
 A walkthrough explanation of this interactive interface's UI is explained under prototype/Prototype-v1.2-explaining-ui.pdf.
