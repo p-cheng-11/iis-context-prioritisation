@@ -46,7 +46,9 @@ Decision: simulate LLM responses.
 
 - I chose scripted responses to avoid LLM API costs and keep the prototype on presenting a simulated context-selection interaction. This allows me to demonstrate the user controlled process and resolving budget conflicts. This simulation will show the interface behaviour, but will not provide evidence of how a real LLM would use the selected context.
 
-1
+V3 sketch design: combining the two screens.
+
+This time, a left side bar is added specifically to act as a guide for showing three different scenarios in using this application prototype. This is not a part of the product, and will only be added to this interface as a guide on using it.
 
 ## AI assistance
 
