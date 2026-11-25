@@ -21,9 +21,32 @@ Initial planned behaviour:
 
 The prototype will use HTML, CSS and vanilla JavaScript to create an interactive interface where the proposed interactions locally in a browser. Context selection will use a simulated word budget, and all responses will be scripted with no backend, database or LLM API. This is because the first prototype is intended to be just an interactive interface, and LLM APIs are over my budget. Node.js’s built-in test runner will check the context-selection logic. No technology choices remain undecided for this simulation apart from the model or API for a future live version, which I have not selected.
 
-## Run/Inspection
+## Run and inspect
 
-- open the prototype/index.html file
+Download and extract the repository, then open:
+`prototype/index.html`
+in a web browser. Keep the accompanying CSS and JavaScript files in their existing locations.
+
+No server, build step, API key or database is required, the conversation and replies are scripted examples.
+
+Use the three scenario buttons on the leftmost panel to inspect:
+
+1. Marking an older message as important and checking the context.
+2. Unmarking a flagged message and restoring a previous selection with Undo button.
+3. Exceeding the priority budget and manually resolving the warning.
+
+Check that the message indicators, selected-message list and response availability update after each action.
+
+## Automated tests
+
+Node.js is required to run the tests, but not to use the prototype.
+The tests use Node.js's built-in test runner and requires no additional packages.
+
+From the repository root, run:
+
+node --test prototype/tests/selection.test.cjs
+
+The file contains 11 tests of word count and context-selection rules. A successful run should report 11 passed and 0 failed. These tests checks the selection logic, interface interactions must be inspected manually using the scenarios.
 
 ## Development record of changes
 
@@ -68,8 +91,9 @@ Model used: ChatGPT Astra
 - ChatGPT Astra generated storyboard 1's image representation after I sent the flow of the panels as prompt.
 - ChatGPT Astra generated storyboard 2's image representation after I sent the flow of the panels as prompt.
 - ChatGPT Astra generated storyboard 3's image representation after I sent the flow of the panels as prompt.
-- CHatGPT Astra generated the initial prototype (code in the prototype folder) after I sent it my sketch v3, I did not write this code.
+- ChatGPT Astra generated the initial prototype (code in the prototype folder) after I sent it my sketch v3, I did not write this code.
 - ChatGPT Astra generated the new css code added in styles.css after I described what issue I'm seeing with the page and told it what I want it to fix.
+- ChatGPT Astra explained how the test for selection (selection.test.cjs) works and runs, I took the explanation and wrote the section for automated tests.
 
 ## Other materials
 
