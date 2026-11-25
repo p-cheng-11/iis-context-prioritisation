@@ -23,7 +23,7 @@ The prototype will use HTML, CSS and vanilla JavaScript to create an interactive
 
 ## Run/Inspection
 
-- open the index.html file
+- open the prototype/index.html file
 
 ## Development record of changes
 
@@ -52,9 +52,12 @@ This time, a left side bar is added specifically to act as a guide for showing t
 
 ## Prototype v1.1: initial screen created.
 
-## Prototype v1.2: changed layout.
+This prototype followed the rough layout of sketch-v3, and implements whole-message importance marking, context selection, inclusion indicators (flags and ticks), a context preview, undo button, and budget-overflow warnings. It uses a scripted conversation and three demonstration scenarios as descripted in scenarios.md. Marking or unmarking a message recalculates the selected context and updates the UI. If important messages exceed the budget, the interface shows a warning and disables the response generation until the conflict is resolved. Context selection and interface controls are implemented in vanilla JS. The word budget and scripted replies simulate LLM interaction, but no real model is connected.
 
-Prototype v1.1 had an awkward formatting that made the page unable to mostly fit on the screen. After describing the issue to ChatGPT Astra, it helped me write the code to fix the styling, resulting in v1.2 (current version).
+## Prototype v1.2: adjusted visual styling.
+
+Prototype v1.1 had an awkward formatting that made the page unable to mostly fit on the screen. After describing the issue to ChatGPT Astra, it helped me write the code to fix the styling, resizing the page and vertical spacing and applying internal scrolling for conversation history and selected message list, resulting in v1.2 (current version). These changes were intended to make the conversation and context controls easier to inspect and use for the user.
+A walkthrough explanation of this interactive interface's UI is explained under prototype/Prototype-v1.2-explaining-ui.pdf.
 
 ## AI assistance
 
