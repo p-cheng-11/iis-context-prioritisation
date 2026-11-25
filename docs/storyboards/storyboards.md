@@ -10,5 +10,5 @@ Bob, the same university student in the group project have now completed the dev
 
 ## Storyboard 3
 
+Bob, the same university student working on the group project, marks another message as important. However, the combined size of his important messages now exceeds the available budget. The system shows a warning and pauses response generation until he resolves this conflict. Bob reviews his flagged messages and removes some flagged information that is no longer needed. The system recalculates the context, and he then continues the conversation.
 (the sitution under scenario 3)
-1
