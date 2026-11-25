@@ -55,6 +55,7 @@ Model used: ChatGPT Astra
 - ChatGPT suggested the repository structure, I took the gitignore base template given and changed the wording of the readme template.
 - After drawing my initial sketch of what the prototype should look like, I sent it to ChatGPT for suggestions: it suggested that it currently has too much redundant information and was too much effort to navigate, and suggested that I should combine the two screens into one to make it easier to use.
 - ChatGPT Astra generated storyboard 1's image representation after I sent the flow of the panels as prompt.
+- ChatGPT Astra generated storyboard 2's image representation after I sent the flow of the panels as prompt.
 
 ## Other materials
 
