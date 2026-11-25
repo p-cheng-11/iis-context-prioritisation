@@ -40,7 +40,7 @@ V2 sketch design: combining the two screens.
 - kept the definition of important, included and excluded.
 - kept the overall functionality of the prototype.
 
-Prototype idea c1 (change 1)
+## Prototype idea c1 (change 1)
 
 Decision: simulate LLM responses.
 
@@ -50,7 +50,11 @@ V3 sketch design: combining the two screens.
 
 This time, a left side bar is added specifically to act as a guide for showing three different scenarios in using this application prototype. This is not a part of the product, and will only be added to this interface as a guide on using it.
 
-Prototype v1: initial screen created.
+## Prototype v1.1: initial screen created.
+
+## Prototype v1.2: changed layout.
+
+Prototype v1.1 had an awkward formatting that made the page unable to mostly fit on the screen. After describing the issue to ChatGPT Astra, it helped me write the code to fix the styling, resulting in v1.2 (current version).
 
 ## AI assistance
 
@@ -62,6 +66,7 @@ Model used: ChatGPT Astra
 - ChatGPT Astra generated storyboard 2's image representation after I sent the flow of the panels as prompt.
 - ChatGPT Astra generated storyboard 3's image representation after I sent the flow of the panels as prompt.
 - CHatGPT Astra generated the initial prototype (code in the prototype folder) after I sent it my sketch v3, I did not write this code.
+- ChatGPT Astra generated the new css code added in styles.css after I described what issue I'm seeing with the page and told it what I want it to fix.
 
 ## Other materials
 

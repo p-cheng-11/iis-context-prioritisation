@@ -6,3 +6,84 @@
 @media(max-width:620px){.topbar{height:64px;padding:0 16px}.brand{font-size:23px}.workspace{display:flex;flex-direction:column}.sidebar{order:0}.chat-panel{order:2;padding:23px 16px}.context-panel{order:1;border-left:0;border-bottom:1px solid var(--line);padding:20px 16px}.context-panel .panel-heading{margin-bottom:14px}.context-panel h2{max-width:none}.selection-summary,.context-panel .footnote,.context-panel .rules{display:none}.undo{margin-bottom:0}.scenario-nav{gap:3px}.scenario{padding:8px 5px;gap:5px}.scenario strong{font-size:10px}.scenario small{display:none}.sidebar .lede{font-size:12px}.scope-note{font-size:10px}.budget-card{padding:14px}.usage{margin-top:10px}.budget-card input{margin-top:12px}#budget-description{margin:9px 0}.context-panel .eyebrow{font-size:9px}.message p{font-size:13px}.panel-heading h2{font-size:17px}dialog{padding:20px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
+
+
+
+/* allows scrolling within the conversation history */
+.conversation {
+  height: 420px;
+  max-height: 55vh;
+  overflow-y: auto;
+  align-content: start;
+  padding-right: 8px;
+}
+
+
+/* more compact desktop layout */
+/* reduce vertical space without changing widths */
+.topbar {
+  height: 64px;
+}
+
+.workspace {
+  min-height: auto;
+}
+
+.sidebar,
+.chat-panel,
+.context-panel {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.panel-heading {
+  margin-bottom: 14px;
+}
+
+.conversation {
+  height: 340px;
+  max-height: 45vh;
+  overflow-y: auto;
+  align-content: start;
+}
+
+.scope-note {
+  padding-top: 20px;
+}
+
+
+
+
+
+
+@media (min-width: 901px) {
+  .chat-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .chat-panel > * {
+    flex-shrink: 0;
+  }
+
+  .conversation {
+    flex: 1 1 0;
+    height: 0;
+    min-height: 340px;
+    max-height: none;
+    overflow-y: auto;
+    align-content: start;
+  }
+}
+
+
+
+
+
+/* Scroll within the selected messages list */
+#selection-list {
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
